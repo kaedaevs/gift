@@ -1,61 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
-    <title>Title</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
+  <title>:)</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
-<body style="font-family: 'Comic Neue';" class="relative">
 
-    <!-- BACKGROUND -->
-    <div class="background">
-        <div class="one">
-            <div class="container">
-                <div class="envelope-wrapper">
-                    <div class="envelope">
-                        <div class="letter">
-                            <div class="text">
-                                <strong style="font-size: .75rem;">Hello !,</strong>
-                                <p style="text-indent: 15px;">
-                                    sarap ni
-                                </p>
-                                <a href="./html/BirthdayCake.html" id="cakeLink" style="font-size: 1rem; display: inline-block; margin-top: 60px; margin-left: 85px; text-decoration: none;">
-                                    🎂
-                                </a>
+<body style="font-family: 'Comic Neue'" class="relative bg-gray-100 min-h-screen flex items-center justify-center p-4">
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="heart"></div>
-                </div>
-            </div>
+  <!-- BACKGROUND -->
+  <div class="w-full max-w-md mx-auto">
+    <div class="envelope-wrapper transition-all duration-500">
+      <div class="envelope relative bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="letter p-4 sm:p-6">
+          <div class="text text-gray-800 text-sm sm:text-base">
+            <strong class="text-base sm:text-lg">Hello !</strong>
+            <p class="mt-2 indent-4">
+              sarap ni
+            </p>
+            <a
+              href="./html/BirthdayCake.html"
+              id="cakeLink"
+              class="block text-2xl mt-12 mx-auto w-fit hover:scale-110 transition-transform"
+              aria-label="Go to cake"
+            >
+              🎂
+            </a>
+          </div>
         </div>
+      </div>
+      <div class="heart absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-red-500 rounded-full"></div>
     </div>
-    
-          <script>
+  </div>
+
+  <!-- Store interaction -->
+  <script>
     const cakeLink = document.getElementById('cakeLink');
     cakeLink.addEventListener('click', () => {
       sessionStorage.setItem('userInteracted', 'true');
     });
+
+    const envelope = document.querySelector('.envelope-wrapper');
+    envelope.addEventListener('click', () => {
+      envelope.classList.toggle('flap');
+      envelope.classList.toggle('open');
+    });
   </script>
 
-    <script>
-        const envelope = document.querySelector('.envelope-wrapper');
-        envelope.addEventListener('click', () => {
-            envelope.classList.toggle('flap');
-            envelope.classList.toggle('open');
-        });
-        
-    </script>
-
-
-    
 </body>
 </html>
-
